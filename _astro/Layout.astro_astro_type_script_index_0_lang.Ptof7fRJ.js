@@ -1,0 +1,1 @@
+document.addEventListener(`astro:page-load`,()=>{let e=Date.now()/1e3;for(let t of document.querySelectorAll(`.clouds, .bh`)){let n=getComputedStyle(t).animationDuration.split(`,`).map(e=>parseFloat(e)*(e.includes(`ms`)?.001:1));n.some(e=>e>0)&&(t.style.animationDelay=n.map(t=>`${t>0?-(e%(t*2)):0}s`).join(`, `))}});
