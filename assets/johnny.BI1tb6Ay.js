@@ -1,4 +1,8 @@
 function e(e){return`<div class="johnny-a"><p>${e}</p></div>`}var t=`<span class="p-warn">not open yet</span>`,n=[{name:`help`,blurb:`what Johnny answers to`,run:()=>`<div class="johnny-a">
+        <p class="johnny-cmds-lead">I know the basics about Xin — where he is,
+          who he has worked for, what he has shipped — and I show every check
+          each answer went through, which you can read about on the
+          <a href="/agent.html">Johnny page</a>.</p>
         <table class="johnny-cmds"><tbody>${n.map(e=>`<tr><td class="c-name">/${e.name}</td><td class="c-blurb">${e.blurb}</td></tr>`).join(``)}</tbody></table>
         <p class="johnny-cmds-note">Anything else is a question, and goes
           through the gates.</p>
