@@ -1,0 +1,26 @@
+import{a as e,i as t,n,r,t as i}from"./conversation.CAVfnGXM.js";var a=`.johnny{z-index:41;border:1px solid var(--t-rule);flex-direction:column;width:26rem;min-height:26rem;max-height:min(46rem,100vh - 3rem);font-size:.82rem;display:flex;position:fixed;bottom:1.25rem;right:1.25rem;box-shadow:0 2px 10px #1d2a352e}.johnny.is-closed{display:none}@media (width<=34rem),(pointer:coarse){.johnny{min-height:0;box-shadow:none;resize:none;border:0;inset:0;width:100%!important;height:100%!important;max-height:none!important}.johnny-grip{display:none}}.johnny-edge,.johnny-grip{z-index:3;touch-action:none;position:absolute}.johnny-edge-top{cursor:ns-resize;height:6px;top:0;left:0;right:0}.johnny-edge-left{cursor:ew-resize;width:6px;top:0;bottom:0;left:0}.johnny-grip{z-index:4;cursor:nwse-resize;width:14px;height:14px;top:0;left:0}.johnny-grip:before{content:"";border-top:1px solid var(--t-dim);border-left:1px solid var(--t-dim);width:.34rem;height:.34rem;position:absolute;top:.28rem;left:.28rem}.johnny-grip:hover:before,.johnny-grip:focus-visible:before{border-color:var(--t-green)}.johnny-grip:focus-visible{outline:none}.johnny{position:fixed;overflow:hidden}`,o=`<p class="johnny-hint">Hi, I'm Johnny the Snitch. You want to ask
+  anything about Xin?</p>`;function s(){if(document.getElementById(`johnny-css`))return;let e=document.createElement(`style`);e.id=`johnny-css`,e.textContent=a,document.head.append(e)}var c=!1;function l(){c||(c=!0,document.addEventListener(`astro:after-swap`,s))}function u(e){let t=`johnny:size`;if(window.matchMedia(`(max-width: 34rem), (pointer: coarse)`).matches)return;let n=localStorage.getItem(t);if(n){let[t,r]=n.split(`,`).map(Number);t&&r&&(e.style.width=`${Math.min(t,window.innerWidth-24)}px`,e.style.height=`${Math.min(r,window.innerHeight-24)}px`,e.style.maxHeight=`none`)}let r=(n,r)=>{n.addEventListener(`pointerdown`,i=>{i.preventDefault(),n.setPointerCapture(i.pointerId);let a=e.getBoundingClientRect(),o=t=>{if(r.includes(`x`)){let n=Math.max(320,Math.min(a.right-t.clientX,window.innerWidth-24));e.style.width=`${n}px`}if(r.includes(`y`)){let n=Math.max(256,Math.min(a.bottom-t.clientY,window.innerHeight-24));e.style.height=`${n}px`,e.style.maxHeight=`none`}},s=()=>{n.removeEventListener(`pointermove`,o),n.removeEventListener(`pointerup`,s),localStorage.setItem(t,`${e.offsetWidth},${e.offsetHeight}`)};n.addEventListener(`pointermove`,o),n.addEventListener(`pointerup`,s)})};e.querySelectorAll(`[data-axes]`).forEach(e=>{r(e,e.dataset.axes??`xy`)}),e.querySelector(`.johnny-grip`)?.addEventListener(`keydown`,n=>{let r=n.shiftKey?48:16,i=n.key===`ArrowLeft`?r:n.key===`ArrowRight`?-r:0,a=n.key===`ArrowUp`?r:n.key===`ArrowDown`?-r:0;!i&&!a||(n.preventDefault(),e.style.width=`${Math.max(320,e.offsetWidth+i)}px`,e.style.height=`${Math.max(256,e.offsetHeight+a)}px`,e.style.maxHeight=`none`,localStorage.setItem(t,`${e.offsetWidth},${e.offsetHeight}`))})}function d(a,c){s(),l();let d=document.getElementById(`johnny-root`),f=document.getElementById(`johnny-open`);if(!d)return;d.innerHTML=`
+    <section id="johnny-panel" class="johnny" role="dialog" aria-label="Ask Johnny">
+      <div class="johnny-edge johnny-edge-top" data-axes="y" aria-hidden="true"></div>
+      <div class="johnny-edge johnny-edge-left" data-axes="x" aria-hidden="true"></div>
+      <div class="johnny-grip" data-axes="xy" role="separator"
+           aria-label="Resize the window" tabindex="0"></div>
+      <header class="johnny-head">
+        <span class="johnny-dots">
+          <button class="johnny-dot johnny-dot-min" type="button"
+                  aria-label="Minimise — keeps the conversation">[-]</button>
+          <button class="johnny-dot johnny-dot-close" type="button"
+                  aria-label="Close — ends the conversation">[x]</button>
+        </span>
+        <span class="johnny-title">johnny</span>
+      </header>
+      <div class="johnny-body" id="johnny-body">
+        <div class="johnny-log" id="johnny-log" aria-live="polite">${o}</div>
+        <form class="johnny-form" id="johnny-form">
+          <label class="sr-only" for="johnny-input">Ask Johnny a question</label>
+          <span class="johnny-prompt" aria-hidden="true"></span>
+          <input id="johnny-input" autocomplete="off" />
+        </form>
+        <div class="johnny-challenge" id="johnny-challenge"></div>
+      </div>
+    </section>`;let p=d.querySelector(`.johnny`),m=d.querySelector(`#johnny-input`),h=d.querySelector(`#johnny-log`);d.querySelector(`.johnny-prompt`).innerHTML=t();let g=()=>{p.classList.add(`is-closed`),f?.setAttribute(`aria-expanded`,`false`)},_=()=>{p.classList.remove(`is-closed`),f?.setAttribute(`aria-expanded`,`true`),m.focus()};_(),d.querySelector(`.johnny-body`)?.addEventListener(`click`,e=>{e.target.closest(`a, button`)||m.focus()}),d.querySelector(`.johnny-dot-min`)?.addEventListener(`click`,g),d.querySelector(`.johnny-dot-close`)?.addEventListener(`click`,()=>{n(p,()=>{e(h,i),h.innerHTML=o,g()})}),window.addEventListener(`johnny:toggle`,()=>p.classList.contains(`is-closed`)?_():g()),document.addEventListener(`keydown`,e=>{e.key===`Escape`&&!p.classList.contains(`is-closed`)&&g()}),u(p),r({api:a,siteKey:c,log:h,form:d.querySelector(`#johnny-form`),input:m,challenge:d.querySelector(`#johnny-challenge`),store:i})}export{d as open};
