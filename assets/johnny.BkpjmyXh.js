@@ -16,7 +16,8 @@ var e=``;function t(t){e=t}function n(e){return e.replace(/&/g,`&amp;`).replace(
            <span class="p-warn">${t}</span> of ${r}, over ${e.turns??0}
            question${e.turns===1?``:`s`}.${c}
            ${e.portal?`<a href="${e.portal}" target="_blank" rel="noopener">Manage the subscription</a>.`:``}`)}return e.open?o(`Kind of you. The day's thinking is one pot everybody shares, and it
-         runs out. A subscription is A$5 a month for an allowance of your own,
+         runs out. A subscription is A$5.50 a month including GST, for an
+         allowance of your own,
          <span class="p-warn">50</span> questions a conversation instead of
          <span class="p-warn">15</span>, and it is where talking to me and
          showing me pictures will live once they exist.<br><br>
