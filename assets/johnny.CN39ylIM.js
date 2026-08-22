@@ -15,16 +15,14 @@ var e=``;function t(t){e=t}function n(e){return e.replace(/&/g,`&amp;`).replace(
       </div>`},{name:`subscribe`,blurb:`subscribe, or see where your allowance is`,run:async()=>{let e=await r();if(!e)return o(c);if(e.entitled){let t=i(e.spent_usd),r=i(e.allowance_usd),s=a(e.renews),c=e.cancels_at_period_end?` It ends on ${s}, because you have cancelled.`:` It refills on ${s}.`;return o(`You are in, as ${n(e.email??``)}. This period you have used
            <span class="p-warn">${t}</span> of ${r}, over ${e.turns??0}
            question${e.turns===1?``:`s`}.${c}
-           ${e.portal?`<a href="${e.portal}" target="_blank" rel="noopener">Manage the subscription</a>.`:``}`)}return e.open?o(`Free, you get <span class="p-warn">15</span> questions a conversation
-         and a share of what I can think about each day. Subscribed, it is
-         <span class="p-warn">50</span> a conversation, and I keep answering
-         after the day's budget is spent, which is when I would otherwise go
-         quiet on everybody.<br><br>
-         A$5 a month, cancel any time.
-         <a href="${e.subscribe}" target="_blank" rel="noopener">Subscribe here</a>.
-         Already paid on another machine? <span class="p-warn">/auth</span>.<br><br>
-         It is also where talking to me and showing me pictures will live, once
-         they exist. No date on that, so subscribe for what I do now.`):o(`Kind of you, but it is ${s}. When it opens it will
+           ${e.portal?`<a href="${e.portal}" target="_blank" rel="noopener">Manage the subscription</a>.`:``}`)}return e.open?o(`Kind of you. The day's thinking is one pot everybody shares, and it
+         runs out. A subscription is A$5 a month for an allowance of your own,
+         <span class="p-warn">50</span> questions a conversation instead of
+         <span class="p-warn">15</span>, and it is where talking to me and
+         showing me pictures will live once they exist.<br><br>
+         <a href="${e.subscribe}" target="_blank" rel="noopener">Subscribe</a>
+         &middot; <a href="/terms.html#the-subscription">what you get</a>
+         &middot; paid already? <span class="p-warn">/auth</span>`):o(`Kind of you, but it is ${s}. When it opens it will
           buy you longer conversations and answers after the day's budget is
           spent, for the price of a coffee a month.`)}},{name:`exit`,blurb:`end the conversation and close the panel`,run:()=>o(`Right you are. The transcript goes with me. Open the panel again and
         I start from scratch.`),effect:`close`},{name:`auth`,blurb:`sign in, if you have already paid`,run:async()=>{let e=await r();return e?e.entitled?o(`You are already signed in as ${n(e.email??``)}.
