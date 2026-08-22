@@ -1,7 +1,6 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>Xin Zhou — Privacy</title><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="What this site keeps, for how long, and who else sees it"><link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAA6klEQVR42u3ZsQ7CIBAGYJ7C0fj+j+Zs4qiTgyyGcnel9hsumlSk/fghLW3Px/115moAAAAAAAAAAAAAAAAAAAAAAAAAurpdL1812sFo+/73swUAAIBjAcxWOED/p7MnVbGyS0AGwOf71hPa2j67vxYtvPqIh9wJ/hKuHPHZ/iQgeo5Vz/nyBBx9xFOeBo804hIgAQGLYL/YjRyP7m+XBFTfB2QmrEU/aESvB9nriwRkdz7aPnvOb94P2AthqV3hijlcvXkiAatf/OznXyQgE0ECJMDLUQAAAAAAAAAAAAAAAAAAAAAAgHPVG+JWCR2oMyk9AAAAAElFTkSuQmCC"><link rel="preload" href="/fonts/fira-regular.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/fonts/fira-bold.woff2" as="font" type="font/woff2" crossorigin><meta property="og:title" content="Xin Zhou — Privacy"><meta property="og:description" content="What this site keeps, for how long, and who else sees it"><meta property="og:image" content="https://xzhou.au/og.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Xin Zhou. Software Engineer. I build interesting things with AI."><meta property="og:url" content="https://xzhou.au/privacy.html"><meta property="og:type" content="website"><meta property="og:site_name" content="Xin Zhou"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Xin Zhou — Privacy"><meta name="twitter:description" content="What this site keeps, for how long, and who else sees it"><meta name="twitter:image" content="https://xzhou.au/og.png"><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><script type="module" src="/assets/ClientRouter.astro_astro_type_script_index_0_lang.Sx5bM3k1.js"></script><script type="module" src="/assets/Layout.astro_astro_type_script_index_0_lang.Ptof7fRJ.js"></script><link rel="stylesheet" href="/assets/Scene.B-jetfxt.css"></head><body><div class="page g-paper"><div data-astro-transition-persist="scene" class="scene"><div class="bh"></div><div class="clouds"></div><div class="occlude"></div><div class="land"></div></div><header><div class="col"><p class="back"><a href="/">← Xin Zhou</a></p></div></header><div class="col has-toc"><nav class="toc" aria-label="On this page"><div class="toc-inner"><p class="toc-head"><span class="here">on this page</span><button type="button" class="to-top">↑ back to top</button></p><div class="toc-scroll"><ol><li><a href="#reading-the-site">Reading the site</a></li><li><a href="#asking-the-assistant-a-question">Asking the assistant a question</a></li><li><a href="#subscribing">Subscribing</a></li><li><a href="#who-else-is-involved">Who else is involved</a></li><li><a href="#your-rights">Your rights</a></li><li><a href="#changes">Changes</a></li><li><a href="#terms">Terms</a></li></ol></div></div></nav><script type="module" src="/assets/Toc.astro_astro_type_script_index_0_lang.ORBKK-hd.js"></script><h2>Privacy</h2><div class="intro"></div><div class="prose long"><p><strong>Last updated 23 August 2026</strong></p>
 <p>This page says what xzhou.au collects, why, how long it keeps it, and who else
-sees it. It is written to be read rather than to satisfy anybody, and it
-describes what the code actually does.</p>
+sees it. It describes what the code actually does.</p>
 <p>Contact for anything on this page: <strong>xinzhou0417@gmail.com</strong>.</p>
 <h3 id="reading-the-site"><a class="anchor" href="#reading-the-site"><span class="hash">##</span> Reading the site</a></h3>
 <p>The site is static, served from GitHub Pages. It sets no cookies, runs no
@@ -17,12 +16,12 @@ server in Australia, as one row:</p>
 <li>and <strong>a keyed hash of your IP address, never the address itself</strong>, so
 repeated use can be counted without anyone being identified from it.</li>
 </ul>
-<p><strong>All of it is deleted after 14 days.</strong> That window is enforced by the code and
-by a test, not by anybody remembering.</p>
+<p><strong>All of it is deleted after 14 days.</strong> The code enforces that window and a
+test checks it.</p>
 <p>The transcript you can see in the chat window is kept only in your own browser,
 for that tab, and disappears when you close it.</p>
 <p>Before your first question the site runs Cloudflare Turnstile, a check that you
-are a person rather than a script. Cloudflare handles that and I do not receive
+are a person and not a script. Cloudflare handles that and I do not receive
 anything from it beyond pass or fail.</p>
 <p>Please do not type anything into the box that you would mind me reading. It is a
 free-text field on a public page, and I do read them. That is how I find out
@@ -31,15 +30,15 @@ where the assistant answers badly.</p>
 <p>If you subscribe, <strong>Stripe collects and holds your payment details. I never see
 them.</strong> Stripe acts as merchant of record through Link, and its own privacy
 terms apply to the payment.</p>
-<p>What I store is small and deliberate:</p>
+<p>I store four things:</p>
 <ul>
-<li><strong>your email address</strong>, which Stripe passes on and which is the whole of your
-account. There is no password and no profile,</li>
+<li><strong>your email address</strong>, which Stripe passes on,</li>
 <li>your Stripe customer reference,</li>
 <li>your subscription's status and current period,</li>
 <li>and a running total of what you have used this period.</li>
 </ul>
-<p>That is kept for as long as you have a subscription. <strong>Ask me and I will delete
+<p>Your email address is the whole of your account. There is no password and no
+profile. All four are kept for as long as you have a subscription. <strong>Ask me and I will delete
 it</strong>, and you can also ask Stripe directly, in which case Stripe deletes its
 record and tells my service to erase mine.</p>
 <p>Signing in sends a six-digit code to your email address, through <strong>Resend</strong>. The
@@ -81,7 +80,7 @@ stops working. Signing out ends it immediately.</p>
 </tbody>
 </table>
 <p>Each is a company with its own privacy terms. I use them because building any of
-it myself would be worse for you, not better.</p>
+it myself would be worse for you.</p>
 <h3 id="your-rights"><a class="anchor" href="#your-rights"><span class="hash">##</span> Your rights</a></h3>
 <p>Ask me for a copy of what I hold about you, ask me to correct it, or ask me to
 delete it, and I will. Anything I hold is small enough to send you in an email.</p>
